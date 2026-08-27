@@ -25,36 +25,32 @@ export function initAboutReveal(sectionSelector: string, bodySelector: string) {
       const target = Math.min(words.length, Math.round((self.progress / 0.8) * words.length));
 
       if (target > revealed) {
-        for (let i = revealed; i < target; i++) {
-          gsap.killTweensOf(words[i]);
-          gsap.set(words[i], { display: 'inline-block' });
-          gsap.to(words[i], { x: 0, duration: 0.6, ease: 'power2.out' });
-        }
+        const toReveal = words.slice(revealed, target);
+        gsap.killTweensOf(toReveal);
+        gsap.set(toReveal, { display: 'inline-block' });
+        gsap.to(toReveal, { x: 0, duration: 0.6, ease: 'power2.out' });
       } else if (target < revealed) {
-        for (let i = target; i < revealed; i++) {
-          gsap.killTweensOf(words[i]);
-          gsap.to(words[i], {
-            x: '50vw',
-            duration: 0.6,
-            ease: 'power2.in',
-            onComplete: () => gsap.set(words[i], { display: 'none' }),
-          });
-        }
+        const toHide = words.slice(target, revealed);
+        gsap.killTweensOf(toHide);
+        gsap.to(toHide, {
+          x: '50vw',
+          duration: 0.6,
+          ease: 'power2.in',
+          onComplete: () => gsap.set(toHide, { display: 'none' }),
+        });
       }
       revealed = target;
     },
     onLeave: () => {
-      for (let i = revealed; i < words.length; i++) {
-        gsap.killTweensOf(words[i]);
-        gsap.set(words[i], { display: 'inline-block', x: 0 });
-      }
+      const toReveal = words.slice(revealed);
+      gsap.killTweensOf(toReveal);
+      gsap.set(toReveal, { display: 'inline-block', x: 0 });
       revealed = words.length;
     },
     onLeaveBack: () => {
-      for (let i = 0; i < revealed; i++) {
-        gsap.killTweensOf(words[i]);
-        gsap.set(words[i], { display: 'none', x: '50vw' });
-      }
+      const toHide = words.slice(0, revealed);
+      gsap.killTweensOf(toHide);
+      gsap.set(toHide, { display: 'none', x: '50vw' });
       revealed = 0;
     },
   });

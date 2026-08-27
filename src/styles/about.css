@@ -20,6 +20,7 @@
 
 .about__body {
   font-family: var(--font-display);
+  contain: layout style;
   max-width: 70ch;
   font-size: clamp(1.05rem, 3.6vw, 1.75rem);
   font-weight: 600;
