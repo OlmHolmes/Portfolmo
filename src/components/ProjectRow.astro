@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { localizedPath, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  project: CollectionEntry<'projects'>;
+}
+
+const { locale, project } = Astro.props;
+const { title, tags, client, date, media, overview } = project.data;
+const href = localizedPath(locale, `/progetti/${project.slug}/`);
+---
+<a
+  class="project-row"
+  href={href}
+  data-project-row
+  data-preview-src={media.cover.src}
+  data-preview-type={media.cover.type}
+  data-overview={overview[locale]}
+  data-tags={JSON.stringify(tags[locale])}
+  data-client={client ?? ''}
+  data-date={date}
+>
+  <span class="project-row__title">{title[locale]}</span>
+</a>

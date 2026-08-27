@@ -1,0 +1,101 @@
+---
+import GalleryVideo from './GalleryVideo.astro';
+import HoverVideo from './HoverVideo.astro';
+
+interface MediaItem {
+  type: 'image' | 'video';
+  src: string;
+  layout?: 'half' | 'half-inline' | 'third' | 'inline' | 'hover' | 'full';
+  scale?: number;
+  spread?: boolean;
+  rotate?: number;
+}
+
+interface Props {
+  media: MediaItem[];
+}
+
+const { media } = Astro.props;
+
+type Row =
+  | { kind: 'single'; item: MediaItem }
+  | { kind: 'duo'; items: [MediaItem, MediaItem]; narrow: boolean }
+  | { kind: 'trio'; items: [MediaItem, MediaItem, MediaItem] }
+  | { kind: 'hover'; image: MediaItem; video: MediaItem };
+
+const rows: Row[] = [];
+for (let i = 0; i < media.length; i++) {
+  const item = media[i];
+  const next = media[i + 1];
+  const next2 = media[i + 2];
+  if (item.type === 'image' && item.layout === 'hover' && next?.type === 'video') {
+    rows.push({ kind: 'hover', image: item, video: next });
+    i++;
+  } else if (item.layout === 'third' && next?.layout === 'third' && next2?.layout === 'third') {
+    rows.push({ kind: 'trio', items: [item, next, next2] });
+    i += 2;
+  } else if (item.layout === 'half' && next?.layout === 'half') {
+    rows.push({ kind: 'duo', items: [item, next], narrow: false });
+    i++;
+  } else if (item.layout === 'half-inline' && next?.layout === 'half-inline') {
+    rows.push({ kind: 'duo', items: [item, next], narrow: true });
+    i++;
+  } else {
+    rows.push({ kind: 'single', item });
+  }
+}
+---
+<div class="project-detail__gallery">
+  {rows.map((row) =>
+    row.kind === 'hover' ? (
+      <HoverVideo imageSrc={row.image.src} videoSrc={row.video.src} />
+    ) : row.kind === 'duo' ? (
+      <div class={row.narrow ? 'project-detail__gallery-duo project-detail__gallery-duo--inline' : 'project-detail__gallery-duo'}>
+        {row.items.map((item) =>
+          item.type === 'video' ? (
+            <GalleryVideo src={item.src} duo />
+          ) : (
+            <img class="project-detail__gallery-item" src={item.src} alt="" />
+          )
+        )}
+      </div>
+    ) : row.kind === 'trio' ? (
+      <div class="project-detail__gallery-trio" data-scale={row.items[0].scale ?? 1} data-spread={String(row.items[0].spread ?? false)}>
+        {row.items.map((item) =>
+          item.type === 'video' ? (
+            <GalleryVideo src={item.src} duo />
+          ) : (
+            <img
+              class="project-detail__gallery-item"
+              src={item.src}
+              alt=""
+              style={item.rotate ? `transform: rotate(${item.rotate}deg)` : undefined}
+            />
+          )
+        )}
+      </div>
+    ) : row.item.type === 'video' ? (
+      <GalleryVideo
+        src={row.item.src}
+        inline={row.item.layout === 'inline'}
+        full={row.item.layout === 'full'}
+      />
+    ) : (
+      <img
+        class={row.item.layout === 'inline' ? 'project-detail__gallery-item project-detail__gallery-item--inline' : 'project-detail__gallery-item'}
+        src={row.item.src}
+        alt=""
+      />
+    )
+  )}
+</div>
+<script>
+  import { initGalleryVideos } from '../scripts/gallery-video';
+  import { initGalleryHovers } from '../scripts/gallery-hover';
+  import { initGalleryDuos } from '../scripts/gallery-duo';
+  import { alignGalleryToMeta } from '../scripts/gallery-meta-align';
+  alignGalleryToMeta('.project-detail__gallery');
+  initGalleryVideos('.project-detail__gallery');
+  initGalleryHovers('.project-detail__gallery');
+  initGalleryDuos('.project-detail__gallery');
+</script>

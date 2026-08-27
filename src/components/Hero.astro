@@ -1,0 +1,11 @@
+---
+import '../styles/hero.css';
+---
+<section id="hero" class="hero">
+  <img class="hero__bg hero__bg--dark" src="/hero/portfolio_bianco_trasparente.png" alt="" fetchpriority="high" />
+  <img class="hero__bg hero__bg--light" src="/hero/portfolio_nero_trasparente.png" alt="" fetchpriority="high" />
+</section>
+<script>
+  const heroImages = document.querySelectorAll<HTMLImageElement>('.hero__bg');
+  heroImages.forEach((img) => img.decode?.().catch(() => {}));
+</script>

@@ -1,0 +1,31 @@
+.about {
+  --about-shift: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: var(--space-4) var(--space-3);
+  margin-bottom: calc(-1 * var(--about-shift));
+}
+
+.about__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  transform: translateY(calc(-1 * var(--about-shift)));
+}
+
+.about__body {
+  font-family: var(--font-display);
+  max-width: 70ch;
+  font-size: clamp(1.05rem, 3.6vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last: justify;
+  color: var(--color-fg);
+  transform: translateY(calc(-1 * var(--about-shift)));
+}

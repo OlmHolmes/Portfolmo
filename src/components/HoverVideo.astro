@@ -1,0 +1,21 @@
+---
+interface Props {
+  imageSrc: string;
+  videoSrc: string;
+}
+
+const { imageSrc, videoSrc } = Astro.props;
+---
+
+<div class="project-detail__gallery-hover" data-gallery-hover>
+  <img class="project-detail__gallery-item" src={imageSrc} alt="" />
+  <video
+    class="project-detail__gallery-hover-video"
+    src={videoSrc}
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    data-gallery-hover-video
+  />
+</div>

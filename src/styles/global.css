@@ -1,0 +1,53 @@
+@import "./tokens.css";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  padding-top: 4.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button {
+  cursor: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-dot--hover {
+  width: 32px;
+  height: 32px;
+}

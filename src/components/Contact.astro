@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import { t, type Locale } from '../lib/i18n';
+import '../styles/contact.css';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const labels = t(locale);
+const email = 'francesco.bortoloso@gmail.com';
+const instagram = 'https://www.instagram.com/olmolmolmolmo/';
+const phone = '+39 3469624098';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const coverSrcs = projects
+  .filter((project) => project.data.media.cover.type === 'image')
+  .map((project) => project.data.media.cover.src);
+---
+<footer id="contact" class="contact">
+  <div class="contact__grid">
+    <div class="contact__photo">
+      <img src="/contact/contact.jpg" alt="" />
+      <a class="contact__overlay-link contact__overlay-link--email" href={`mailto:${email}`}>{labels.email}</a>
+      <a class="contact__overlay-link contact__overlay-link--phone" href={`tel:${phone.replace(/\s/g, '')}`}>{labels.phone}</a>
+      <a class="contact__overlay-link contact__overlay-link--instagram" href={instagram} target="_blank" rel="noopener noreferrer">{labels.instagram}</a>
+    </div>
+    <div class="contact__reel" data-contact-reel data-covers={JSON.stringify(coverSrcs)}>
+      <img data-contact-reel-img src={coverSrcs[0]} alt="" />
+    </div>
+  </div>
+</footer>
+<script>
+  import { initRevealOnScroll } from '../scripts/reveal-on-scroll';
+  import { initContactReel } from '../scripts/contact-reel';
+  initRevealOnScroll('.contact');
+  initContactReel('[data-contact-reel]');
+</script>

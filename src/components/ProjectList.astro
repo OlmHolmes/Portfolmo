@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProjectRow from './ProjectRow.astro';
+import { t, type Locale } from '../lib/i18n';
+import '../styles/project-list.css';
+
+interface Props {
+  locale: Locale;
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { locale, projects } = Astro.props;
+const labels = t(locale);
+---
+<section id="projects" class="project-list-section">
+  <div class="project-list-layout">
+    <div class="project-list-window">
+      <div class="project-list">
+        {projects.map((project) => <ProjectRow locale={locale} project={project} />)}
+      </div>
+    </div>
+    <div class="project-preview-panel">
+      <div class="project-preview-panel__media" data-panel-media></div>
+      <div class="project-preview-panel__info">
+        <div class="project-preview-panel__field">
+          <span class="project-preview-panel__label">{labels.overview}</span>
+          <p class="project-preview-panel__overview" data-panel-overview></p>
+        </div>
+        <div class="project-preview-panel__field">
+          <span class="project-preview-panel__label">{labels.tagsLabel}</span>
+          <div class="project-preview-panel__tags" data-panel-tags></div>
+        </div>
+        <div class="project-preview-panel__field" data-panel-client-row>
+          <span class="project-preview-panel__label">{labels.client}</span>
+          <span class="project-preview-panel__client-row">
+            <span class="project-preview-panel__client" data-panel-client></span>
+            <span class="project-preview-panel__date" data-panel-date></span>
+          </span>
+        </div>
+      </div>
+      <a class="project-preview-panel__link" data-panel-link href="#">{labels.exploreCase}</a>
+    </div>
+  </div>
+</section>
+<script>
+  import { initProjectReel } from '../scripts/project-reel';
+  initProjectReel('.project-list-section', '.project-list-window', '.project-list', '.project-preview-panel');
+</script>

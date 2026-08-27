@@ -1,0 +1,27 @@
+.hero {
+  position: relative;
+  margin-top: -4.5rem;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: var(--space-3);
+  width: calc(100% - 2 * var(--space-3));
+  height: calc(100% - 2 * var(--space-3));
+  object-fit: contain;
+  object-position: center center;
+}
+
+.hero__bg--light {
+  display: none;
+}
+
+:root[data-theme="light"] .hero__bg--dark {
+  display: none;
+}
+
+:root[data-theme="light"] .hero__bg--light {
+  display: block;
+}

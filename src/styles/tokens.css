@@ -1,0 +1,17 @@
+:root {
+  --color-bg: #0d0b0a;
+  --color-fg: #f5efe6;
+  --color-accent: #ff4d1c;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+}
+
+[data-theme="light"] {
+  --color-bg: #f5efe6;
+  --color-fg: #0d0b0a;
+  --color-accent: #ff4d1c;
+}

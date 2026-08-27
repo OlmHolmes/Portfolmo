@@ -1,0 +1,29 @@
+---
+import { t, localizedPath, otherLocale, type Locale } from '../lib/i18n';
+import '../styles/header.css';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const labels = t(locale);
+const other = otherLocale(locale);
+const home = localizedPath(locale, '/');
+---
+<header class="site-header">
+  <nav class="site-header__nav">
+    <a href={`${home}#about`}>{labels.me}</a>
+    <a href={`${home}#projects`}>{labels.project}</a>
+    <a href={`${home}#contact`}>{labels.contact}</a>
+  </nav>
+  <div class="site-header__controls">
+    <a href={localizedPath(other, currentPath)} class="site-header__lang">{labels.switchTo}</a>
+    <button id="theme-toggle" class="site-header__theme-button" aria-label="Toggle day/night theme">&#9790;</button>
+  </div>
+</header>
+<script>
+  import { initThemeToggle } from '../scripts/theme-toggle';
+  initThemeToggle('#theme-toggle');
+</script>

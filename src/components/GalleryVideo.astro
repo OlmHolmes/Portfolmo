@@ -1,0 +1,82 @@
+---
+interface Props {
+  src: string;
+  duo?: boolean;
+  inline?: boolean;
+  full?: boolean;
+}
+
+const { src, duo = false, inline = false, full = false } = Astro.props;
+const wrapperClass = [
+  'project-detail__gallery-video',
+  duo && 'project-detail__gallery-video--duo',
+  inline && 'project-detail__gallery-video--inline',
+  full && 'project-detail__gallery-video--full',
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<div class={wrapperClass}>
+  <div class="project-detail__gallery-video-stage">
+    <video src={src} muted loop autoplay playsinline data-gallery-video />
+    <button
+      type="button"
+      class="project-detail__video-toggle"
+      data-gallery-video-toggle
+      aria-label="Play / pause"
+    >
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <rect x="5" y="4" width="5" height="16" />
+        <rect x="14" y="4" width="5" height="16" />
+      </svg>
+      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <polygon points="6,4 20,12 6,20" />
+      </svg>
+    </button>
+    <div class="project-detail__video-controls" data-gallery-video-controls>
+      <div class="project-detail__video-seek-wrap">
+        <div class="project-detail__video-seek-fill" data-gallery-video-seek-fill></div>
+        <input
+          type="range"
+          class="project-detail__video-seek"
+          data-gallery-video-seek
+          min="0"
+          max="100"
+          step="0.1"
+          value="0"
+          aria-label="Avanzamento video"
+        />
+      </div>
+      <button
+        type="button"
+        class="project-detail__video-mute"
+        data-gallery-video-mute
+        aria-label="Attiva / disattiva audio"
+      >
+        <svg class="icon-volume-on" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="4,9 8,9 13,4 13,20 8,15 4,15" />
+          <path d="M16.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          <path d="M19 6a9 9 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+        <svg class="icon-volume-off" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="4,9 8,9 13,4 13,20 8,15 4,15" />
+          <path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="project-detail__video-volume-wrap">
+        <div class="project-detail__video-volume-fill" data-gallery-video-volume-fill></div>
+        <input
+          type="range"
+          class="project-detail__video-volume"
+          data-gallery-video-volume
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          aria-label="Volume"
+        />
+      </div>
+    </div>
+  </div>
+</div>

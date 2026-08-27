@@ -1,0 +1,59 @@
+---
+import { marked } from 'marked';
+import type { CollectionEntry } from 'astro:content';
+import ProjectGallery from './ProjectGallery.astro';
+import { t, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  project: CollectionEntry<'projects'>;
+}
+
+const { locale, project } = Astro.props;
+const labels = t(locale);
+const { title, subtitle, tags, date, participants, credits, media, copy } = project.data;
+
+const bodyHtml = marked.parse(copy[locale].trim());
+const allMedia = media.gallery;
+---
+
+<article class="project-detail">
+  <section class="project-detail__intro">
+    <h1 class="project-detail__title">{title[locale]}</h1>
+    <p class="project-detail__subtitle">{subtitle[locale]}</p>
+
+    <div class="project-detail__content-row">
+      <div class="project-detail__body" set:html={bodyHtml} />
+      <div class="project-detail__meta">
+        <div class="project-detail__meta-row">
+          <span class="project-detail__meta-label">{labels.date}</span>
+          <span class="project-detail__meta-value">{date}</span>
+        </div>
+        <div class="project-detail__meta-row">
+          <span class="project-detail__meta-label">{labels.category}</span>
+          <span class="project-detail__meta-value">
+            {tags[locale].map((tag) => <span>{tag}</span>)}
+          </span>
+        </div>
+        {participants && participants.length > 0 && (
+          <div class="project-detail__meta-row">
+            <span class="project-detail__meta-label">{labels.participants}</span>
+            <span class="project-detail__meta-value">
+              {participants.map((name) => <span>{name}</span>)}
+            </span>
+          </div>
+        )}
+        {credits && (
+          <div class="project-detail__meta-row">
+            <span class="project-detail__meta-label">{labels.credits}</span>
+            <span class="project-detail__meta-value">
+              {credits[locale].map((line) => <span>{line}</span>)}
+            </span>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <ProjectGallery media={allMedia} />
+</article>
