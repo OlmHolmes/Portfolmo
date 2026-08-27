@@ -1,9 +1,5 @@
 # build output
 dist/
-
-# video files (too large for GitHub, deployed directly via Vercel CLI)
-*.mp4
-*.mov
 # generated types
 .astro/
 
