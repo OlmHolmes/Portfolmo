@@ -29,8 +29,8 @@ media:
   gallery:
     - { type: video, src: "/projects/forse-sto-bruciando/forse-sto-bruciando-01.mov", layout: full }
 overview:
-  it: "Light design per un'installazione performativa di Paolo Dell'Anna: luci audioreattive sincronizzate alla traccia ambient di Jackbloom."
-  en: "Light design for a performative installation by Paolo Dell'Anna: audio-reactive lighting synced to Jackbloom's ambient track."
+  it: "Light design per un'installazione di Paolo Dell'Anna: luci audioreattive."
+  en: "Light design for an installation by Paolo Dell'Anna: audio-reactive lighting."
 copy:
   it: |
     "Forse sto bruciando" è un'installazione performativa di Paolo Dell'Anna che indaga vuoto, noia, memoria e narrazione personale: il pubblico è invitato a tradurre un racconto personale che viene stampato, tramite una stampante alimentare, su un toast completamente edibile, trasformando l'atto di mangiare in una metafora di assimilazione ed elaborazione del vissuto.

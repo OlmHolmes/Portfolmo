@@ -29,8 +29,8 @@ media:
     - { type: image, src: "/projects/x-triennale/x-triennale-04.jpeg" }
     - { type: image, src: "/projects/x-triennale/x-triennale-05.jpeg" }
 overview:
-  it: "Quaderno di ricerca sul Labirinto dei ragazzi della X Triennale, curato da BBPR con i graffiti di Saul Steinberg."
-  en: "Research notebook on the Labirinto dei ragazzi from the tenth Triennale, curated by BBPR with graffiti by Saul Steinberg."
+  it: "Uno dei primi musei per bambini d'Italia: un quaderno di ricerca sul Labirinto dei ragazzi della X Triennale, tra l'architettura di BBPR e i graffiti di Saul Steinberg."
+  en: "One of Italy's first museums for children: a research notebook on the Children's Labyrinth from the 10th Triennale, between BBPR's architecture and Saul Steinberg's graffiti."
 copy:
   it: |
     Il progetto nasce come un quaderno di ricerca dedicato a un'installazione della decima Triennale di Milano, nel 1954: il "Labirinto dei ragazzi", curato dallo studio BBPR. Uno spazio ludico pensato per avvicinare i più piccoli alle arti, costruito con un linguaggio architettonico in continuità con il contesto urbano circostante.

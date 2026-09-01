@@ -22,7 +22,10 @@
 
 .site-header__nav a {
   text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
 .site-header__controls {

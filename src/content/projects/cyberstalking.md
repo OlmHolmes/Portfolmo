@@ -39,8 +39,8 @@ media:
     - { type: image, src: "/projects/cyberstalking/cyberstalking-04-statico.jpeg", layout: hover }
     - { type: video, src: "/projects/cyberstalking/cyberstalking-04-animato.mp4" }
 overview:
-  it: "Campagna di sensibilizzazione sul cyberstalking rivolta ai 15-25 anni: dossier, poster illustrati, sito, evento e workshop di serigrafia."
-  en: "Awareness campaign on cyberstalking for 15-25 year-olds: dossier, illustrated posters, site, public event and screen-printing workshop."
+  it: "Il cyberstalking raramente ha l'aspetto di un'emergenza. È un messaggio che non hai chiesto, un like su una foto di tre anni fa, una richiesta di amicizia da qualcuno che non conosci. È l'accumulo a logorare le persone, ed è proprio questo che rende difficile progettarci contro: come costruisci urgenza attorno a qualcosa che, preso singolarmente, sembra così normale?"
+  en: "Cyberstalking rarely looks like an emergency. It's an unwanted message, a like on a photo from three years ago, a friend request from someone you don't know. It's the accumulation that wears people down, and that's exactly what makes it so hard to design against: how do you build urgency around something that, taken on its own, seems so normal?"
 copy:
   it: |
     Il cyberstalking raramente ha l'aspetto di un'emergenza. È un messaggio che non hai chiesto, un like su una foto di tre anni fa, una richiesta di amicizia da qualcuno che non conosci. È l'accumulo a logorare le persone, ed è proprio questo che rende difficile progettarci contro: come costruisci urgenza attorno a qualcosa che, preso singolarmente, sembra così normale?

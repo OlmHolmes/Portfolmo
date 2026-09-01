@@ -26,8 +26,8 @@ media:
   gallery:
     - { type: video, src: "/projects/exploring-villa-restelli/exploring-villa-restelli-01.mp4", layout: full }
 overview:
-  it: "Scansioni 3D di una villa vicino a Olgiate Olona ricomposte in un particellare animato che reagisce a una colonna sonora originale."
-  en: "3D scans of a villa near Olgiate Olona reassembled into an animated particle system reacting to an original soundtrack."
+  it: "È possibile trasportare digitalmente le emozioni che si provano attraversando un luogo? Attraverso una scansione 3D ho provato a farlo, reinterpretando quello spazio in chiave digitale."
+  en: "Can the emotions felt while walking through a place be carried into the digital world? Through a 3D scan, I tried to do exactly that, reinterpreting that space in digital form."
 copy:
   it: |
     Ho scoperto Villa Restelli a gennaio, una villa vicino a Olgiate Olona dove un gruppo di ragazzi vive in una forma di comunità. Sono rimasto colpito dalla bellezza del posto al primo sguardo, al punto da tornarci per scansionarla con Scaniverse, l'app di scansione 3D sul telefono, senza avere ancora un'idea precisa di cosa farne. Aggirandomi da solo per gli ambienti mentre facevo le scansioni, ho percepito quanto la villa fosse legata ai suoni della natura che la circonda, con un'intensità che aveva qualcosa di quasi inquietante.

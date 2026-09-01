@@ -38,8 +38,8 @@ media:
     - { type: image, src: "/projects/agrabah/agrabah-02.jpeg" }
     - { type: video, src: "/projects/agrabah/agrabah-motion.mp4" }
 overview:
-  it: "Identità visiva per la città di Aladdin: pittogrammi ispirati alla tradizione araba applicati a logotipo, segnaletica e merchandising."
-  en: "Visual identity for Aladdin's city: pictograms inspired by Arab tradition applied to logotype, signage and merchandise."
+  it: "La brand identity di Agrabah, la città di Aladdin, tradotta in logotipo, segnaletica e merchandising."
+  en: "The brand identity of Agrabah, Aladdin's city, translated into a logotype, signage and merchandising."
 copy:
   it: |
     Per questo workshop ci è stato chiesto di costruire l'identità visiva di Agrabah, la città di Aladdin. Abbiamo guardato al branding di città mediorientali reali per trovare ispirazione, distillando elementi della tradizione araba in un set di pittogrammi, poi ripiegati nella lettera A e ripetuti in forme diverse lungo tutto il logotipo.

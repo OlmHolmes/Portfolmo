@@ -23,8 +23,8 @@ media:
     - { type: image, src: "/projects/ultrasynesthesia/ultrasynesthesia-03.jpg", layout: half }
     - { type: video, src: "/projects/ultrasynesthesia/ultrasynesthesia-01.mp4", layout: half }
 overview:
-  it: "Installazione per la Genova Design Week che traduce luce, temperatura e umidità in un'esperienza audiovisiva generativa in tempo reale."
-  en: "Installation for Genoa Design Week translating light, temperature and humidity into a real-time generative audiovisual experience."
+  it: "Alla Genova Design Week, luce, temperatura e umidità si trasformano in un'esperienza audiovisiva generativa in tempo reale, tra suono e immagine."
+  en: "At Genova Design Week, light, temperature and humidity become a real-time generative audiovisual experience, between sound and image."
 copy:
   it: |
     Dal 3 al 7 giugno 2026, alla Genova Design Week, ho collaborato con Ultrasuono allo sviluppo di un'installazione interattiva. Ultrasuono è un dispositivo musicale pensato per esplorare il rapporto tra suono e ambiente: un sensore di luce, temperatura e umidità fa entrare i dati ambientali direttamente nel processo sonoro, influenzando una matrice di effetti che trasforma il segnale audio in tempo reale.

@@ -13,6 +13,16 @@ const { locale, title } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <script is:inline>
+      // Runs synchronously before first paint, so the page never flashes
+      // dark-then-light (or vice versa) while theme-toggle.ts's own module
+      // script loads - light is the default when nothing is stored yet.
+      (function () {
+        var stored = localStorage.getItem('theme');
+        var theme = stored === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
   </head>
   <body>
     <slot />

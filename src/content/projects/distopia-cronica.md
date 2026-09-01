@@ -23,8 +23,8 @@ media:
   gallery:
     - { type: video, src: "/projects/distopia-cronica/distopia-cronica-01.mp4", layout: inline }
 overview:
-  it: "Progetto individuale di videomapping su sorveglianza e privacy, con estetica CRT e immagini generate con intelligenza artificiale."
-  en: "Solo videomapping project on surveillance and privacy, built with CRT aesthetics and AI-generated imagery."
+  it: "Quanto di quello che pensiamo ci appartiene davvero, e quanto ci arriva già filtrato? Un videomapping tra estetica CRT e immagini generate con IA, sulla sorveglianza diventata ormai parte del paesaggio."
+  en: "How much of what we think truly belongs to us, and how much arrives already filtered? A videomapping piece between CRT aesthetics and AI-generated imagery, on surveillance that has become part of the landscape."
 copy:
   it: |
     Distopia Cronica nasce all'interno del corso di videomapping del master, come tentativo di dare forma visiva a una domanda che mi porto dietro da tempo: quanto di quello che penso è davvero mio, e quanto invece mi viene consegnato già filtrato? Il progetto affronta la violazione della privacy e la sorveglianza diffusa che la accompagna, non come minaccia esterna e riconoscibile, ma come condizione ormai ambientale: gli algoritmi che selezionano ciò che vediamo finiscono per selezionare anche il modo in cui pensiamo, restituendoci un mondo già orientato che raramente mettiamo in discussione, proprio perché non ci accorgiamo più di essere osservati mentre lo attraversiamo.

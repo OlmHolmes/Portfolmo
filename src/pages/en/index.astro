@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
+import MobileNote from '../../components/MobileNote.astro';
 import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
 import ProjectList from '../../components/ProjectList.astro';
@@ -12,8 +13,9 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 ---
 <Layout locale={locale} title="Francesco Olmo Bortoloso">
   <Header locale={locale} currentPath="/en/" />
+  <MobileNote locale={locale} />
   <Hero />
   <About locale={locale} />
   <ProjectList locale={locale} projects={projects} />
-  <Contact locale={locale} />
+  <Contact />
 </Layout>

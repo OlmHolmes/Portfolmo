@@ -30,7 +30,7 @@ media:
     - { type: image, src: "/projects/hines/hines-04.jpeg" }
 overview:
   it: "Identità visiva per un nuovo quartiere milanese: il nome Aequus incontra il dialetto milanese in un logotipo dai forti contrasti."
-  en: "Visual identity for a new Milan neighborhood: the name Aequus meets Milanese dialect in a high-contrast logotype."
+  en: "Visual identity for a new Milanese district: the name Aequus meets Milanese dialect in a high-contrast logotype."
 copy:
   it: |
     Per questo workshop io e il mio gruppo abbiamo costruito l'identità visiva di un quartiere che sorgerà a Milano nei prossimi anni, in zona 7. Il nome scelto è "Aequus", che in latino richiama l'idea di equità, affiancato dalla scritta in dialetto milanese "l'è 'l trott" (il trotto), un modo per tenere insieme il futuro del quartiere e la storia del luogo.

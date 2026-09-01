@@ -43,7 +43,6 @@
   color: #fff;
   mix-blend-mode: difference;
   text-decoration: none;
-  text-transform: uppercase;
   text-align: left;
   font-family: var(--font-display);
   font-weight: 700;
@@ -51,17 +50,17 @@
   letter-spacing: 0.02em;
 }
 
-.contact__overlay-link--instagram {
-  top: 6%;
+.contact__overlay-link--email {
+  top: 10%;
 }
 
-.contact__overlay-link--email {
+.contact__overlay-link--instagram {
   top: 50%;
   transform: translateY(-50%);
 }
 
 .contact__overlay-link--phone {
-  bottom: 6%;
+  bottom: 10%;
 }
 
 @media (max-width: 768px) {

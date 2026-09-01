@@ -30,8 +30,8 @@ media:
     - { type: image, src: "/projects/polly-peck/polly-peck-03.jpeg", layout: half }
     - { type: image, src: "/projects/polly-peck/polly-peck-05.jpeg", layout: half }
 overview:
-  it: "Ricerca e racconto del declino di un brand fallito, raccolti in un book in formato magazine con tono di voce e valori del brand."
-  en: "Research into the decline of a failed brand, gathered into a magazine-format book defining its tone of voice and values."
+  it: "La parabola di un brand fallito, ricostruita e raccontata in un book in formato magazine: dal declino ai valori, fino a un'identità che non è mai davvero esistita."
+  en: "The rise and fall of a failed brand, reconstructed and told through a magazine-format book: from its decline to its values, up to an identity that never truly existed."
 copy:
   it: |
     Per questo laboratorio di metaprogetto ci è stato chiesto di ricercare e raccontare la storia di un brand fallito. Il nostro gruppo ha scelto Polly Peck: ne abbiamo ricostruito il declino, la filosofia alla base del progetto imprenditoriale e i metodi di vendita, per poi individuarne caratteristiche e valori, associandoli a elementi reali come città, fotografie iconiche e immagini evocative.

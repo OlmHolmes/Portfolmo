@@ -1,0 +1,32 @@
+---
+import { t, type Locale } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const labels = t(locale);
+---
+<p class="mobile-note">{labels.mobileNote}</p>
+
+<style>
+  .mobile-note {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-note {
+      display: block;
+      max-width: 40ch;
+      margin: 0 auto;
+      padding: var(--space-2);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--color-fg);
+      opacity: 0.6;
+    }
+  }
+</style>

@@ -29,8 +29,8 @@ media:
     - { type: image, src: "/projects/data-footprint/data-footprint-02.jpg", layout: half }
     - { type: video, src: "/projects/data-footprint/data-footprint-01.mp4" }
 overview:
-  it: "Installazione interattiva per Future Fashion 2.0: la scarpa diventa interfaccia per esplorare un pianeta digitale tra suono e HUD spaziali."
-  en: "Interactive installation for Future Fashion 2.0: the shoe becomes an interface to explore a digital planet through sound and space-mission HUDs."
+  it: "Una scarpa che diventa telecomando: sollevandola e ruotandola nello spazio, il pubblico si avventura in un viaggio intergalattico, andando a esplorare un pianeta con le fattezze di Marte e modificando una traccia audio ad ogni movimento della scarpa."
+  en: "A shoe that becomes a remote control: lifting and turning it in space, visitors embark on an intergalactic journey, exploring a planet with Mars-like features and reshaping an audio track with every movement of the shoe."
 copy:
   it: |
     Il 25 giugno, durante Future Fashion 2.0 (evento organizzato da D-House Laboratorio Urbano), ho presentato Data Footprint, un'installazione interattiva realizzata per la nuova collezione di calzature nata dalla collaborazione tra Look at Sangi, Materia Adapt e Kornit Digital, mostrata per la prima volta durante la Design Week di quest'anno.

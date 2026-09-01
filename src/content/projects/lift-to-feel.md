@@ -30,8 +30,8 @@ media:
     - { type: image, src: "/projects/lift-to-feel/lift-to-feel-08.jpeg", layout: half }
     - { type: image, src: "/projects/lift-to-feel/lift-to-feel-06.jpeg" }
 overview:
-  it: "Libro che celebra la tipografia nascosta negli oggetti quotidiani, costruito come mappa di una città immaginaria da sfogliare."
-  en: "A book celebrating hidden typography in everyday objects, built as the map of an imaginary city to leaf through."
+  it: "Libro che celebra la tipografia nascosta negli oggetti presenti nella nostra quotidianità, costruito come mappa di una città immaginaria da sfogliare."
+  en: "A book celebrating the hidden typography in everyday objects, built as the map of an imaginary city to leaf through."
 copy:
   it: |
     Il progetto nasce da una domanda sulla tipografia negletta: quella tecnica, in secondo piano, che nessuno nota perché la sua forma nasce solo dalla sua funzione. Quella che sta lì, senza pretese, ai margini.

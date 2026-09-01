@@ -29,8 +29,8 @@ media:
   gallery:
     - { type: video, src: "/projects/amor-sanguinis/amor-sanguinis-01.mp4" }
 overview:
-  it: "Stanza immersiva per Pecoranera a Future Fashion 2.0: videomapping e luci LED mettono in risalto gli occhi rossi ricamati sul vestito."
-  en: "Immersive room for Pecoranera at Future Fashion 2.0: video mapping and LED lights highlight the red eyes embroidered on the dress."
+  it: "Una stanza immersiva realizzata per Pecoranera, presentata durante un evento con talk ospitato da DesignTech: luci e videomapping animano un vestito realizzato dal brand stesso."
+  en: "An immersive room created for Pecoranera, presented during an event with a talk hosted by DesignTech: lights and videomapping bring to life a dress made by the brand itself."
 copy:
   it: |
     Il 25 giugno 2026, presso Design Tech, si è tenuto Future Fashion 2.0, evento organizzato da D-House e dedicato al mondo della moda. Per l'occasione ho realizzato per Pecoranera una stanza immersiva: un videomapping proiettato sul vestito e sulla parete alle sue spalle, accompagnato da luci LED nascoste dietro i teli, con contenuti e audio in loop continuo.

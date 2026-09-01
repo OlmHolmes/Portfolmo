@@ -17,6 +17,7 @@ const labels = {
     phone: 'Telefono',
     email: 'Email',
     instagram: 'Instagram',
+    mobileNote: 'Questo sito è pensato per il computer. Da telefono si vede bene lo stesso, ma sul grande schermo dà il meglio. Se puoi, fatti un giro anche da lì.',
   },
   en: {
     me: 'About',
@@ -34,6 +35,7 @@ const labels = {
     phone: 'Phone',
     email: 'Email',
     instagram: 'Instagram',
+    mobileNote: 'This site is built for desktop. It looks good on phone too, but it really shines on a bigger screen. If you can, take a look from there.',
   },
 } as const;
 

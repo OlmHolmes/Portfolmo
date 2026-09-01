@@ -14,8 +14,12 @@ export function initThemeToggle(buttonSelector: string) {
     button!.innerHTML = theme === 'dark' ? MOON_ICON : SUN_ICON;
   }
 
-  const stored = localStorage.getItem(STORAGE_KEY);
-  const initial = stored === 'light' ? 'light' : 'dark';
+  // A blocking inline script in Layout.astro already sets this attribute
+  // before first paint (so the page never flashes the wrong theme while
+  // this module script loads) - read it back rather than recomputing, so
+  // this can't disagree with what's already on screen.
+  const current = document.documentElement.getAttribute('data-theme');
+  const initial = current === 'dark' ? 'dark' : 'light';
   applyTheme(initial);
 
   button.addEventListener('click', () => {
