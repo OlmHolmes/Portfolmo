@@ -44,10 +44,10 @@ export function t(locale: Locale) {
 }
 
 export function localizedPath(locale: Locale, path: string): string {
-  const withoutEnPrefix = path.replace(/^\/en\//, '/').replace(/^\/en$/, '/');
-  return locale === 'en'
-    ? `/en${withoutEnPrefix === '/' ? '/' : withoutEnPrefix}`
-    : withoutEnPrefix;
+  const withoutItPrefix = path.replace(/^\/it\//, '/').replace(/^\/it$/, '/');
+  return locale === 'it'
+    ? `/it${withoutItPrefix === '/' ? '/' : withoutItPrefix}`
+    : withoutItPrefix;
 }
 
 export function otherLocale(locale: Locale): Locale {

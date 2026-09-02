@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const locale = 'it' as const;
+const locale = 'en' as const;
 ---
 <Layout locale={locale} title={project.data.title[locale]}>
   <Header locale={locale} currentPath={`/progetti/${project.slug}/`} />

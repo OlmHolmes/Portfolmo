@@ -8,11 +8,11 @@ import ProjectList from '../../components/ProjectList.astro';
 import Contact from '../../components/Contact.astro';
 import { getCollection } from 'astro:content';
 
-const locale = 'en' as const;
+const locale = 'it' as const;
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 <Layout locale={locale} title="Francesco Olmo Bortoloso">
-  <Header locale={locale} currentPath="/en/" />
+  <Header locale={locale} currentPath="/it/" />
   <MobileNote locale={locale} />
   <Hero />
   <About locale={locale} />
