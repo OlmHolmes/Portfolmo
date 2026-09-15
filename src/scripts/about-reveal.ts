@@ -53,6 +53,7 @@ function setupReveal(section: HTMLElement, body: HTMLElement) {
   hide();
 
   let played = false;
+  let revealTween: gsap.core.Tween | null = null;
 
   // Scrolling in either direction plays the same intro: down from Hero
   // (onEnter) or back up from Project without ever having played it, e.g.
@@ -68,7 +69,7 @@ function setupReveal(section: HTMLElement, body: HTMLElement) {
     if (played) return;
     played = true;
     gsap.killTweensOf(words);
-    gsap.to(words, {
+    revealTween = gsap.to(words, {
       x: 0,
       duration: 0.4,
       ease: 'power2.out',
@@ -108,12 +109,31 @@ function setupReveal(section: HTMLElement, body: HTMLElement) {
   // change doesn't leave not-yet-revealed words visible mid-screen instead
   // of past the right edge. Only reapply while still in the hidden state -
   // once played, words belong at x:0 and must not be touched.
+  //
+  // `.about__body`'s font-size is itself viewport-width-based (`3.6vw` in
+  // the clamp), so a resize is a real text reflow, not just a container
+  // resize: entering fullscreen (or any window resize) changes font size,
+  // which changes word wrap. GSAP's own ScrollTrigger auto-refreshes all
+  // pins on resize, which can nudge scroll position and re-fire
+  // onEnter/onLeaveBack around that moment. If that happens while the
+  // reveal tween is still mid-flight, each word's in-flight `x` offset was
+  // computed against the pre-resize wrap - the browser reflows the
+  // underlying word boxes immediately, but the still-animating transform
+  // doesn't, so words can visually land on top of a *different* word's new
+  // row until the tween catches up, reading as overlapping text. Snapping
+  // an in-flight reveal straight to its finished state on resize removes
+  // that window entirely instead of letting it play out against a moving
+  // target.
   let resizeTimer: ReturnType<typeof setTimeout> | undefined;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       offsets = computeOffscreenOffsets(words);
-      if (!played) hide();
+      if (!played) {
+        hide();
+      } else if (revealTween && revealTween.isActive()) {
+        revealTween.progress(1);
+      }
     }, 150);
   });
 }
