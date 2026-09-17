@@ -12,13 +12,11 @@ tags:
     - 3D Scan
     - Blender
     - TouchDesigner
-    - Progetto individuale
   en:
     - Motion
     - 3D Scan
     - Blender
     - TouchDesigner
-    - Solo project
 client: Personal project
 date: "2026"
 media:

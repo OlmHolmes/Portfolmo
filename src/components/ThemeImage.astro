@@ -1,0 +1,15 @@
+---
+interface Props {
+  srcDark: string;
+  srcLight: string;
+  ratio: number;
+  class?: string;
+}
+
+const { srcDark, srcLight, ratio, class: className } = Astro.props;
+---
+
+<div class={`project-detail__theme-image ${className ?? ''}`} data-natural-ratio={ratio} style={`aspect-ratio: ${ratio}`}>
+  <img class="project-detail__theme-image-img project-detail__theme-image-img--dark" src={srcDark} alt="" />
+  <img class="project-detail__theme-image-img project-detail__theme-image-img--light" src={srcLight} alt="" />
+</div>

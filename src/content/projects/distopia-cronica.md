@@ -10,11 +10,9 @@ tags:
   it:
     - Motion Graphics
     - Videomapping
-    - Progetto individuale
   en:
     - Motion Graphics
     - Videomapping
-    - Solo project
 client: Progetto universitario
 clientShort: Università
 date: "2025"

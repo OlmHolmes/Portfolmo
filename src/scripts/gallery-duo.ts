@@ -1,13 +1,17 @@
-function naturalRatio(el: HTMLImageElement | HTMLVideoElement): Promise<number> {
+function naturalRatio(el: HTMLElement): Promise<number> {
+  if (el.dataset.naturalRatio) {
+    return Promise.resolve(parseFloat(el.dataset.naturalRatio));
+  }
   if (el instanceof HTMLImageElement) {
     if (el.complete && el.naturalWidth) return Promise.resolve(el.naturalWidth / el.naturalHeight);
     return new Promise((resolve) => {
       el.addEventListener('load', () => resolve(el.naturalWidth / el.naturalHeight), { once: true });
     });
   }
-  if (el.readyState >= 1 && el.videoWidth) return Promise.resolve(el.videoWidth / el.videoHeight);
+  const video = el as HTMLVideoElement;
+  if (video.readyState >= 1 && video.videoWidth) return Promise.resolve(video.videoWidth / video.videoHeight);
   return new Promise((resolve) => {
-    el.addEventListener('loadedmetadata', () => resolve(el.videoWidth / el.videoHeight), { once: true });
+    video.addEventListener('loadedmetadata', () => resolve(video.videoWidth / video.videoHeight), { once: true });
   });
 }
 
@@ -32,7 +36,7 @@ export function initGalleryDuos(selector: string) {
     const mediaEls = items.map((item) =>
       item.matches('.project-detail__gallery-video--duo')
         ? item.querySelector<HTMLVideoElement>('video')
-        : (item as HTMLImageElement)
+        : item
     );
     if (heightTargets.some((t) => !t) || mediaEls.some((el) => !el)) return;
 

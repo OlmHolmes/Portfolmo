@@ -109,6 +109,8 @@
 
 .project-detail__gallery-hover .project-detail__gallery-item {
   display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 .project-detail__gallery-hover-video {
@@ -170,6 +172,49 @@
   box-sizing: border-box;
 }
 
+/* Theme-swapped image: two stacked images (dark-theme and light-theme
+   recolors of the same artwork), only one shown depending on the active
+   theme. Sized like a normal gallery item (the wrapper gets the
+   .project-detail__gallery-item sizing rules); height/aspect-ratio is
+   handled by whichever layout context it's in (duo/trio height script, or
+   height:auto for a single item via the wrapper's own aspect-ratio). */
+.project-detail__theme-image {
+  position: relative;
+  display: block;
+  /* aspect-ratio itself is set inline per-instance (from the known image
+     dimensions) since CSS attr()-driven aspect-ratio isn't reliably
+     supported yet */
+}
+
+.project-detail__theme-image-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.project-detail__theme-image-img--light {
+  display: none;
+}
+
+:root[data-theme="light"] .project-detail__theme-image-img--dark {
+  display: none;
+}
+
+:root[data-theme="light"] .project-detail__theme-image-img--light {
+  display: block;
+}
+
+/* Data Footprint video only: the video's actual height is capped by
+   max-height:85vh, so widening the wrapper box (tried earlier) never changed
+   the visible picture size — it just added invisible empty space. A real
+   transform scale on the frame itself is what actually enlarges it. */
+[data-project="data-footprint"] .project-detail__gallery-video--full {
+  transform: scale(1.01);
+}
+
 /* Inline video: width of the text BODY column specifically (not the meta/tags
    sidebar) — no full-bleed breakout, natural height, never cropped */
 .project-detail__gallery-video--inline {
@@ -179,6 +224,14 @@
   transform: none;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Distopia Cronica video only, light theme only: a black backdrop exactly
+   the video's own footprint (same height as the video, same width as the
+   text, since it's already an inline video) — covers any white gap around
+   the video that only shows up against the light theme's white page bg */
+:root[data-theme="light"] [data-project="distopia-cronica"] .project-detail__gallery-video-stage {
+  background-color: #000;
 }
 
 /* Inline image: same body-column width as the inline video above/below it */
@@ -250,6 +303,7 @@
 
 .project-detail__gallery-video--duo .project-detail__gallery-video-stage {
   height: clamp(600px, 53vw, 880px);
+  max-height: none;
   width: auto;
   max-width: 100%;
 }
@@ -257,6 +311,7 @@
 .project-detail__gallery-video--duo .project-detail__gallery-video-stage video {
   display: block;
   height: 100%;
+  max-height: none;
   width: auto;
   max-width: 100%;
 }

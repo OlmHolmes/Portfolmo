@@ -26,7 +26,7 @@ media:
   cover: { type: image, src: "/projects/agrabah/agrabah-cover.jpg" }
   gallery:
     - { type: image, src: "/projects/agrabah/agrabah-10.png", layout: half }
-    - { type: image, src: "/projects/agrabah/agrabah-11.png", layout: half }
+    - { type: image, src: "/projects/agrabah/agrabah-11.png", srcLight: "/projects/agrabah/agrabah-11-light.png", ratio: 1.5958333333, layout: half }
     - { type: image, src: "/projects/agrabah/agrabah-13.png", layout: third, scale: 0.84, spread: true }
     - { type: image, src: "/projects/agrabah/agrabah-12.png", layout: third, scale: 0.84, spread: true }
     - { type: image, src: "/projects/agrabah/agrabah-06.png", layout: third, scale: 0.84, spread: true }
@@ -36,7 +36,7 @@ media:
     - { type: image, src: "/projects/agrabah/agrabah-04.jpeg" }
     - { type: image, src: "/projects/agrabah/agrabah-08.jpeg" }
     - { type: image, src: "/projects/agrabah/agrabah-02.jpeg" }
-    - { type: video, src: "/projects/agrabah/agrabah-motion.mp4" }
+    - { type: video, src: "/projects/agrabah/agrabah-motion.mp4", layout: full }
 overview:
   it: "La brand identity di Agrabah, la città di Aladdin, tradotta in logotipo, segnaletica e merchandising."
   en: "The brand identity of Agrabah, Aladdin's city, translated into a logotype, signage and merchandising."

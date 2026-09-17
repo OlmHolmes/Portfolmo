@@ -27,7 +27,7 @@ credits:
 media:
   cover: { type: image, src: "/projects/amor-sanguinis/amor-sanguinis-cover.jpg" }
   gallery:
-    - { type: video, src: "/projects/amor-sanguinis/amor-sanguinis-01.mp4" }
+    - { type: video, src: "/projects/amor-sanguinis/amor-sanguinis-01.mp4", layout: full }
 overview:
   it: "Una stanza immersiva realizzata per Pecoranera, presentata durante un evento con talk ospitato da DesignTech: luci e videomapping animano un vestito realizzato dal brand stesso."
   en: "An immersive room created for Pecoranera, presented during an event with a talk hosted by DesignTech: lights and videomapping bring to life a dress made by the brand itself."

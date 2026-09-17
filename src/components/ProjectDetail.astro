@@ -17,7 +17,7 @@ const bodyHtml = marked.parse(copy[locale].trim());
 const allMedia = media.gallery;
 ---
 
-<article class="project-detail">
+<article class="project-detail" data-project={project.slug}>
   <section class="project-detail__intro">
     <h1 class="project-detail__title">{title[locale]}</h1>
     <p class="project-detail__subtitle">{subtitle[locale]}</p>

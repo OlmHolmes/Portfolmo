@@ -1,6 +1,7 @@
 ---
 import GalleryVideo from './GalleryVideo.astro';
 import HoverVideo from './HoverVideo.astro';
+import ThemeImage from './ThemeImage.astro';
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -9,6 +10,13 @@ interface MediaItem {
   scale?: number;
   spread?: boolean;
   rotate?: number;
+  // Dark-theme image swapped for a recolored light-theme version (e.g. a
+  // black-bg/white-text wordmark that needs to become light-bg/dark-text
+  // against the light theme's page background). `ratio` is width/height,
+  // required so the duo/trio height-matching script doesn't have to wait on
+  // image load to know the aspect ratio.
+  srcLight?: string;
+  ratio?: number;
 }
 
 interface Props {
@@ -54,6 +62,8 @@ for (let i = 0; i < media.length; i++) {
         {row.items.map((item) =>
           item.type === 'video' ? (
             <GalleryVideo src={item.src} duo />
+          ) : item.srcLight ? (
+            <ThemeImage class="project-detail__gallery-item" srcDark={item.src} srcLight={item.srcLight} ratio={item.ratio!} />
           ) : (
             <img class="project-detail__gallery-item" src={item.src} alt="" />
           )
@@ -64,6 +74,8 @@ for (let i = 0; i < media.length; i++) {
         {row.items.map((item) =>
           item.type === 'video' ? (
             <GalleryVideo src={item.src} duo />
+          ) : item.srcLight ? (
+            <ThemeImage class="project-detail__gallery-item" srcDark={item.src} srcLight={item.srcLight} ratio={item.ratio!} />
           ) : (
             <img
               class="project-detail__gallery-item"
@@ -79,6 +91,13 @@ for (let i = 0; i < media.length; i++) {
         src={row.item.src}
         inline={row.item.layout === 'inline'}
         full={row.item.layout === 'full'}
+      />
+    ) : row.item.srcLight ? (
+      <ThemeImage
+        class={row.item.layout === 'inline' ? 'project-detail__gallery-item project-detail__gallery-item--inline' : 'project-detail__gallery-item'}
+        srcDark={row.item.src}
+        srcLight={row.item.srcLight}
+        ratio={row.item.ratio!}
       />
     ) : (
       <img

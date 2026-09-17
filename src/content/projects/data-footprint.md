@@ -27,7 +27,7 @@ media:
   gallery:
     - { type: image, src: "/projects/data-footprint/data-footprint-01.jpg", layout: half }
     - { type: image, src: "/projects/data-footprint/data-footprint-02.jpg", layout: half }
-    - { type: video, src: "/projects/data-footprint/data-footprint-01.mp4" }
+    - { type: video, src: "/projects/data-footprint/data-footprint-01.mp4", layout: full }
 overview:
   it: "Una scarpa che diventa telecomando: sollevandola e ruotandola nello spazio, il pubblico si avventura in un viaggio intergalattico, andando a esplorare un pianeta con le fattezze di Marte e modificando una traccia audio ad ogni movimento della scarpa."
   en: "A shoe that becomes a remote control: lifting and turning it in space, visitors embark on an intergalactic journey, exploring a planet with Mars-like features and reshaping an audio track with every movement of the shoe."

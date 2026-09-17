@@ -27,7 +27,7 @@ credits:
 media:
   cover: { type: image, src: "/projects/forse-sto-bruciando/forse-sto-bruciando-cover.jpg" }
   gallery:
-    - { type: video, src: "/projects/forse-sto-bruciando/forse-sto-bruciando-01.mov", layout: full }
+    - { type: video, src: "/projects/forse-sto-bruciando/forse-sto-bruciando-01.mp4", layout: full }
 overview:
   it: "Light design per un'installazione di Paolo Dell'Anna: luci audioreattive."
   en: "Light design for an installation by Paolo Dell'Anna: audio-reactive lighting."

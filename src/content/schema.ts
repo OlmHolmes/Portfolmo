@@ -23,6 +23,13 @@ export const mediaItemSchema = z.object({
   spread: z.boolean().optional(),
   // Rotates this single image in place (degrees, CSS convention: positive = clockwise).
   rotate: z.number().optional(),
+  // Dark-theme image swapped for a recolored light-theme version at runtime
+  // (e.g. a black-bg/white-text wordmark that needs to read against the
+  // light theme's page background instead). `ratio` (width/height) is
+  // required alongside it so height-matching layouts don't need to wait on
+  // image load to know the aspect ratio.
+  srcLight: z.string().optional(),
+  ratio: z.number().optional(),
 });
 
 export const projectSchema = z.object({
